@@ -37,29 +37,34 @@ class Edit extends StatelessWidget {
             ),
           ),
           Container(height: 50),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: TextField(
-              controller: nameTEC,
-              decoration: InputDecoration(hintText: 'Username'),
-            ),
+          EditCard(
+            title: 'Code Name',
+            subtitle: 'Name',
+            controler: nameTEC,
           ),
-          Container(height: 50),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: TextField(
-              controller: stackTEC,
-              decoration: InputDecoration(hintText: 'Front End Developper'),
-            ),
+          EditCard(
+            title: 'Stack',
+            subtitle: 'Frontend',
+            controler: stackTEC,
           ),
-          Container(height: 50),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: TextField(
-              controller: expTEC,
-              decoration: InputDecoration(hintText: '2years'),
-            ),
+          EditCard(
+            title: 'Experience',
+            subtitle: '2 Years',
+            controler: expTEC,
           ),
+          EditCard(
+            title: 'Tools',
+            subtitle: 'Figma, Adobe XD, Illustrator',
+            // controler: expTEC,
+          ),
+          // Container(height: 50),
+          // Padding(
+          //   padding: const EdgeInsets.all(20.0),
+          //   child: TextField(
+          //     controller: expTEC,
+          //     decoration: InputDecoration(hintText: '2years'),
+          //   ),
+          // ),
         ],
       ),
       bottomNavigationBar: Padding(
@@ -71,7 +76,10 @@ class Edit extends StatelessWidget {
           ),
           color: Colors.white,
           padding: EdgeInsets.all(8.0),
-          onPressed: () => _onSubmittedHandler(context),
+          onPressed: () {
+            _onSubmittedHandler(context);
+            print(nameTEC);
+          },
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 5.0),
             child: Text(

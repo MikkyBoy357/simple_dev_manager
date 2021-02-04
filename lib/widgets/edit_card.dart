@@ -4,41 +4,56 @@ import 'package:simple_dev_manager/const.dart';
 class EditCard extends StatelessWidget {
   final String title;
   final String subtitle;
+  final TextEditingController controler;
   const EditCard({
     Key key,
     this.title,
     this.subtitle,
+    this.controler,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 80,
+      height: 90,
       width: MediaQuery.of(context).size.width,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 30.0, top: 15),
+            padding: const EdgeInsets.only(left: 55.0, top: 15),
             child: Text(
               title,
               style: Const.title,
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 10.0, top: 10),
+            padding: const EdgeInsets.only(left: 25.0, top: 10),
             child: Row(
               children: [
-                CircleAvatar(
-                  radius: 5,
-                  backgroundColor: Colors.green,
+                Padding(
+                  padding: const EdgeInsets.only(top: 8.0),
+                  child: CircleAvatar(
+                    radius: 5,
+                    backgroundColor: Colors.green,
+                  ),
                 ),
                 Container(
-                  width: 10.0,
+                  width: 20.0,
                 ),
-                Text(
-                  subtitle,
-                  style: Const.subtitle,
+                Padding(
+                  padding: const EdgeInsets.only(top: 8.0),
+                  child: Container(
+                    height: 20,
+                    width: MediaQuery.of(context).size.width - 100,
+                    child: TextField(
+                      controller: controler,
+                      decoration: InputDecoration.collapsed(
+                        hintText: subtitle,
+                        // labelStyle: Const.subtitle,
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),
