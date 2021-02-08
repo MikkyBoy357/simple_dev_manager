@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:simple_dev_manager/models/model.dart';
-import 'package:simple_dev_manager/widgets/edit_card.dart';
+import 'package:simple_dev_manager/ui/widgets/edit_card.dart';
 
 class Edit extends StatelessWidget {
   final TextEditingController nameTEC = TextEditingController();

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:simple_dev_manager/const.dart';
 import 'package:simple_dev_manager/databases/task_store.dart';
 import 'package:simple_dev_manager/models/model.dart';
+import 'package:simple_dev_manager/ui/screens/edit.dart';
 
 class TaskItem extends StatefulWidget {
   final Task task;
@@ -52,23 +53,23 @@ class _TaskItemState extends State<TaskItem> {
             color: Colors.black,
             icon: Icon(Icons.edit_outlined),
             onPressed: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (context) {
-              //       return Edit();
-              //     },
-              //   ),
-              // );
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return Edit();
+                  },
+                ),
+              );
             },
           ),
-          Container(
-            width: 10,
-          ),
-          Icon(
-            CupertinoIcons.delete,
-            color: Colors.black,
-          ),
+          IconButton(
+            icon: Icon(
+              CupertinoIcons.delete,
+              color: Colors.black,
+            ),
+            onPressed: () {},
+          )
         ],
       ),
     );

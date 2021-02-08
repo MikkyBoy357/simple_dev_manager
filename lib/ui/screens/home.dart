@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:simple_dev_manager/databases/task_store.dart';
 import 'package:simple_dev_manager/models/model.dart';
-import 'package:simple_dev_manager/widgets/task_item.dart';
+import 'package:simple_dev_manager/ui/widgets/task_item.dart';
 
 import 'edit.dart';
 
