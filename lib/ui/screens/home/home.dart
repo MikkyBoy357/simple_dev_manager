@@ -2,9 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:simple_dev_manager/databases/task_store.dart';
 import 'package:simple_dev_manager/models/model.dart';
+import 'package:simple_dev_manager/ui/screens/add/add.dart';
 import 'package:simple_dev_manager/widgets/task_item.dart';
-
-import 'edit.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -19,14 +18,14 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      // backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.white,
+        // backgroundColor: Colors.white,
         title: Text(
           'DEVELOPERS',
           style: TextStyle(
-            color: Colors.black,
+            // color: Colors.black,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -34,7 +33,7 @@ class _HomeState extends State<Home> {
           GestureDetector(
             onTap: () async {
               Task task = await Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => Edit()));
+                  context, MaterialPageRoute(builder: (_) => Add()));
 
               if (task != null) {
                 taskStore.save(task);
@@ -42,7 +41,7 @@ class _HomeState extends State<Home> {
             },
             child: Icon(
               Icons.add,
-              color: Colors.black,
+              // color: Colors.black,
             ),
           ),
           Container(
@@ -50,7 +49,7 @@ class _HomeState extends State<Home> {
           ),
           Icon(
             Icons.nightlight_round,
-            color: Colors.black,
+            // color: Colors.black,
           ),
           Container(
             width: 20,

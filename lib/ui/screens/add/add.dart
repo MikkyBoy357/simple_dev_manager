@@ -11,14 +11,12 @@ class Add extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.white,
         leading: IconButton(
           icon: Icon(
             CupertinoIcons.back,
-            color: Colors.black,
+            // color: Colors.black,
           ),
           onPressed: () {
             Navigator.pop(context);
@@ -26,9 +24,9 @@ class Add extends StatelessWidget {
         ),
         centerTitle: false,
         title: Text(
-          'Edit',
+          'Add',
           style: TextStyle(
-            color: Colors.black,
+            // color: Colors.black,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -77,9 +75,8 @@ class Add extends StatelessWidget {
         child: FlatButton(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8.0),
-            side: BorderSide(color: Colors.black),
+            side: BorderSide(color: Colors.white),
           ),
-          color: Colors.white,
           padding: EdgeInsets.all(8.0),
           onPressed: () {
             _onSubmittedHandler(context);
