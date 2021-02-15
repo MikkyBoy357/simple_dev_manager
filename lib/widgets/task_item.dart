@@ -42,19 +42,13 @@ class _TaskItemState extends State<TaskItem> {
             widget.task.stack,
             style: TextStyle(
               fontSize: 14,
-              // color: Colors.black,
             ),
           ),
-          // Text(
-          //   widget.task.experience,
-          //   style: Const.subtitle,
-          // ),
         ],
       ),
       trailing: Wrap(
         children: [
           IconButton(
-            // color: Colors.black,
             icon: Icon(Icons.edit_outlined),
             onPressed: () async {
               Task taskEdited = await Navigator.push(
@@ -71,7 +65,6 @@ class _TaskItemState extends State<TaskItem> {
           IconButton(
             icon: Icon(
               CupertinoIcons.delete,
-              // color: Colors.black,
             ),
             onPressed: () {
               widget.taskStore.delete(widget.task);

@@ -1,9 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:simple_dev_manager/databases/task_store.dart';
 import 'package:simple_dev_manager/models/model.dart';
 import 'package:simple_dev_manager/ui/screens/add/add.dart';
 import 'package:simple_dev_manager/widgets/task_item.dart';
+
+import '../../../const.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -47,58 +50,34 @@ class _HomeState extends State<Home> {
           Container(
             width: 10,
           ),
-          Icon(
-            Icons.nightlight_round,
-            // color: Colors.black,
+          // Consumer(
+          //   builder: (context, notifier, child) {
+          //     return IconButton(
+          //       icon: Icon(
+          //         Icons.nightlight_round,
+          //       ),
+          //       onPressed: () {
+          //         setState(() {
+          //           notifier.toggleTheme();
+          //         });
+          //       },
+          //     );
+          //   },
+          // ),
+          Consumer<ThemeNotifier>(
+            builder: (context, notifier, child) => CupertinoSwitch(
+              onChanged: (val) {
+                notifier.toggleTheme();
+              },
+              value: notifier.dark,
+              activeColor: Theme.of(context).accentColor,
+            ),
           ),
           Container(
             width: 20,
           ),
         ],
       ),
-      // body: ListView.builder(
-      //   itemCount: developers.length,
-      //   itemBuilder: (context, index) {
-      //     return ListTile(
-      //       leading: CircleAvatar(
-      //         radius: 25,
-      //       ),
-      //       title: Text(
-      //         developers[index],
-      //         style: Const.title,
-      //       ),
-      //       subtitle: Text(
-      //         'Front End Developer',
-      //         style: Const.subtitle,
-      //       ),
-      //       trailing: Wrap(
-      //         children: [
-      //           IconButton(
-      //             color: Colors.black,
-      //             icon: Icon(Icons.edit_outlined),
-      //             onPressed: () {
-      //               Navigator.push(
-      //                 context,
-      //                 MaterialPageRoute(
-      //                   builder: (context) {
-      //                     return Edit();
-      //                   },
-      //                 ),
-      //               );
-      //             },
-      //           ),
-      //           Container(
-      //             width: 10,
-      //           ),
-      //           Icon(
-      //             CupertinoIcons.delete,
-      //             color: Colors.black,
-      //           ),
-      //         ],
-      //       ),
-      //     );
-      //   },
-      // ),
       body: SafeArea(
         child: FutureBuilder(
           future: taskStore.stream(),
