@@ -73,7 +73,9 @@ class _TaskItemState extends State<TaskItem> {
               CupertinoIcons.delete,
               // color: Colors.black,
             ),
-            onPressed: () {},
+            onPressed: () {
+              widget.taskStore.delete(widget.task);
+            },
           )
         ],
       ),
